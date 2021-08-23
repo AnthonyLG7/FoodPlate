@@ -19,7 +19,6 @@ describe('AppComponent', () => {
   it(`should have as title 'foodPlate-cli'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('foodPlate-cli');
   });
 
   it('should render title', () => {
