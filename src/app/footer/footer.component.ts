@@ -11,7 +11,11 @@ export class FooterComponent implements OnInit {
   versionNumber: number = this.convertVerStringToNumber(this.versionString);
   icon: string = 'assets/images/icons/icons-29.png';
   logoAlt: string = 'FoodPlate logo';
-  isCurrent: boolean = false;
+  isCurrent: boolean = true;
+
+  moreInfo() {
+    alert('for more info see choosemyplate.gov');
+  }
 
   constructor() { }
 
