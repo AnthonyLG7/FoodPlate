@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  versionString: string = "1.0.0";
+  versionNumber: number = this.convertVerStringToNumber(this.versionString);
+  icon: string = 'assets/images/icons/icons-29.png';
+  logoAlt: string = 'FoodPlate logo';
+  isCurrent: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  private convertVerStringToNumber(version:string) {
+    return parseInt(version.split('.').join(''),2);
   }
 
 }
