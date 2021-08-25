@@ -10,12 +10,18 @@ import { MainComponent } from './main/main.component';
 import { MessageComponent } from './message/message.component';
 import { PlateComponent } from './plate/plate.component';
 import { NavComponent } from './nav/nav.component';
+import { RegisterComponent } from './register/register.component';
+import { DefaultComponent } from './components/default/default.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { FarmersMarketsComponent } from './farmers-markets/farmers-markets.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent, NavComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent, NavComponent, RegisterComponent, DefaultComponent, ExercisesComponent, FarmersMarketsComponent],
   imports: [
+    AppRoutingModule,
     CommonModule,
     BrowserModule,
     FoodGroupsModule
