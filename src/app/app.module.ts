@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { FoodGroupsModule } from './food-groups/food-groups.module';
 import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
+import { HeaderComponent } from './header/header.component';
 import { HomeBtnComponent } from './home-btn/home-btn.component';
-import { PlateComponent } from './plate/plate.component';
+import { MainComponent } from './main/main.component';
 import { MessageComponent } from './message/message.component';
+import { PlateComponent } from './plate/plate.component';
 
 
 
@@ -15,7 +16,8 @@ import { MessageComponent } from './message/message.component';
   declarations: [AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent],
   imports: [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    FoodGroupsModule
   ],
   bootstrap: [AppComponent]
 })
