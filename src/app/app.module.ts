@@ -9,11 +9,12 @@ import { HomeBtnComponent } from './home-btn/home-btn.component';
 import { MainComponent } from './main/main.component';
 import { MessageComponent } from './message/message.component';
 import { PlateComponent } from './plate/plate.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent, NavComponent],
   imports: [
     CommonModule,
     BrowserModule,
