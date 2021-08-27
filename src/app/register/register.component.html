@@ -4,6 +4,15 @@
   class="box"
   id="registerForm"
 >
+  <p
+    *ngIf="
+      !regForm.controls['firstname'].valid &&
+      regForm.controls['firstname'].touched
+    "
+    class="formMessage"
+  >
+    Please enter a first name
+  </p>
   <label for="firstname" class="block labelTop">First Name</label>
   <input
     type="text"
@@ -12,6 +21,16 @@
     tabindex="1"
     placeholder="Enter your first name here."
   />
+
+  <p
+    *ngIf="
+      !regForm.controls['email'].valid && regForm.controls['email'].touched
+    "
+    class="formMessage"
+  >
+    Please enter a valid email
+  </p>
+
   <label for="email" class="block labelTop">Email</label>
   <input
     type="email"

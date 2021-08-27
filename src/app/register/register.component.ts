@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../models/User';
 import { UserService } from '../service/user.service';
@@ -22,11 +22,11 @@ export class RegisterComponent implements OnInit {
               private fb: FormBuilder,
               private router: Router) {
                 this.regForm = fb.group({
-                  'firstname': [null], 
-                  'email' : [null],
-                  'gender' : [null],
-                  'ageGroup' : [null]
-                })
+                  'firstname': [null, [Validators.required]], 
+                  'email' : [null , [Validators.compose([Validators.required,Validators.email])]], 
+                  'gender' : [null , [Validators.required]],
+                  'ageGroup' : [null , [Validators.required]]
+                }, {updateOn: 'blur'})
                }
 
   onSubmit() {
