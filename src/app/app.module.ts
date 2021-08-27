@@ -17,6 +17,7 @@ import { ExercisesComponent } from './exercises/exercises.component';
 import { FarmersMarketsComponent } from './farmers-markets/farmers-markets.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodaysGoalComponent } from './todays-goal/todays-goal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,7 +29,8 @@ import { TodaysGoalComponent } from './todays-goal/todays-goal.component';
     BrowserModule,
     FoodGroupsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

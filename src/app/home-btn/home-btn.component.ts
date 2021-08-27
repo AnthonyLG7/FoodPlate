@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { User } from 'src/assets/code-snippets/User';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'fp-home-btn',
@@ -6,10 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./home-btn.component.css']
 })
 export class HomeBtnComponent implements OnInit {
-  @Input() user;
-  constructor() { }
+  //@Input() user;
+
+  currentUser: User;
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.currentUser.subscribe(user => this.currentUser = user);
   }
 
 }

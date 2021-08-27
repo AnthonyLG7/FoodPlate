@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { User } from 'src/assets/code-snippets/User';
+import { Requirements } from './models/requirements';
+import { RequirementsService } from './service/requirements.service';
 import { UserService } from './service/user.service';
 
 @Component({
@@ -13,7 +15,9 @@ export class AppComponent implements OnInit {
 
   //user: User;
   currentUser: User;
-  constructor(private titleService: Title, private userService: UserService) {}
+  private requirements: Array<Requirements>;
+
+  constructor(private titleService: Title, private userService: UserService, private reqsService: RequirementsService) {}
   
 
   ngOnInit(): void {
@@ -21,6 +25,13 @@ export class AppComponent implements OnInit {
     //this.user = this.userService.getUser();
     this.userService.getUser();
     this.userService.currentUser.subscribe(user => this.currentUser = user);
+    this.reqsService.getRequirements().subscribe(
+      reqs => {
+        this.requirements = reqs;
+        console.table(this.requirements);
+        console.log(this.requirements[1].ageGroup);
+      }
+    )
   }
 
 }

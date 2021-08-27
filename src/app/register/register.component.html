@@ -1,6 +1,6 @@
 <form
   [formGroup]="regForm"
-  (ngSubmit)="onSubmit()"
+  (ngSubmit)="onSubmit(regForm.value)"
   class="box"
   id="registerForm"
 >
