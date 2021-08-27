@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Guided Exercise AsyncSubject, ReplaySubject, and BehaviorSubject
+    </title>
+    <link rel="icon" type="image/png" href="../images/favicon.ico" />
+    <script src="https://unpkg.com/@reactivex/rxjs@6.0.0/dist/global/rxjs.umd.js"></script>
+  </head>
+  <body>
+    <h1>AsyncSubject, ReplaySubject and BehaviorSubject</h1>
+
+    <!-- <script>
+      // AsynchSubject
+      const rangeOfNumbers = rxjs.range(0, 5);
+      const subject = new rxjs.AsyncSubject();
+
+      rangeOfNumbers.subscribe(subject);
+      subject.subscribe(
+        (x) => console.log(x),
+        (error) => console.error(error),
+        () => console.log("done")
+      );
+    </script> -->
+
+    <!-- <script>
+      // ReplaySubject
+      // const subject = new rxjs.Subject();
+      const subject = new rxjs.ReplaySubject();
+
+      subject.next("emitted before a subscribe");
+      subject.next("also emitted before a subscribe");
+      subject.next("one more time");
+      subject.subscribe(
+        (value) => console.log(value),
+        (error) => console.error(error),
+        () => console.log("done")
+      );
+
+      subject.next("emitted after subscribe");
+      subject.next("also emitted after subscribe");
+    </script> -->
+
+    <!--<script>
+    // BehaviorSubject
+    const behaviorSubject = new rxjs.BehaviorSubject(0); // 0 is the initial value
+    behaviorSubject.subscribe({
+        next: (value) => console.log('observer-A: ' + value)
+    });
+
+    behaviorSubject.next(1);
+    behaviorSubject.next(2);
+
+    behaviorSubject.subscribe({
+        next: (value) => console.log('observer-B: ' + value)
+    });
+    behaviorSubject.next(3);
+</script>-->
+  </body>
+</html>
