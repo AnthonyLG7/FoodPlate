@@ -18,11 +18,13 @@ import { FarmersMarketsComponent } from './farmers-markets/farmers-markets.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodaysGoalComponent } from './todays-goal/todays-goal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FoodComponent } from './food/food.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent, NavComponent, RegisterComponent, DefaultComponent, ExercisesComponent, FarmersMarketsComponent, TodaysGoalComponent],
+  declarations: [
+    AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent, NavComponent, RegisterComponent, DefaultComponent, ExercisesComponent, FarmersMarketsComponent, TodaysGoalComponent, FoodComponent],
   imports: [
     AppRoutingModule,
     CommonModule,

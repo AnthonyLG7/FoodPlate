@@ -4,6 +4,7 @@ import { DefaultComponent } from "./components/default/default.component";
 import { ExercisesComponent } from "./exercises/exercises.component";
 import { FarmersMarketsComponent } from "./farmers-markets/farmers-markets.component";
 import { foodGroupsRoutes } from "./food-groups/food-groups.routing";
+import { FoodComponent } from "./food/food.component";
 
 import { PlateComponent } from "./plate/plate.component";
 import { RegisterComponent } from "./register/register.component";
@@ -21,6 +22,7 @@ const routes: Routes = [
             {path: 'myPlate', component: PlateComponent},
             {path: 'exercises', component: ExercisesComponent},
             {path: 'farmersMarkets', component: FarmersMarketsComponent},
+            {path: 'nutritionInfo', component: FoodComponent},
             ...foodGroupsRoutes,
             fallbackRoute
         ]
