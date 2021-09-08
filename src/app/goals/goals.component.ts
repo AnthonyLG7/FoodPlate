@@ -33,7 +33,7 @@ export class GoalsComponent implements OnInit {
     this.newGoalForm = showForm;
   }
 
-  toggleGoalComplete(goal: Goal): void {
+  toggleGoalCompleted(goal: Goal): void {
     goal.didIt = !goal.didIt;
   }
 
@@ -60,10 +60,57 @@ export class GoalsComponent implements OnInit {
     this.goal = goal;
     this.goalForm.setValue({
       id: this.goal.id,
-      deadline: this.goal.dealine,
+      deadline: this.goal.deadline,
       didIt: this.goal.didIt,
       goalTitle: this.goal.goalTitle
     })
+  }
+
+  deleteGoal(goal): void {
+    this.goalService.deleteGoalById(goal.id)
+      .subscribe(goal => {
+        this.goalService.getGoals()
+        console.log(goal);
+      });
+  }
+
+  deleteCompleted(): void {
+    const completedGoals = this.allGoals.filter(goals => goals.didIt === true)
+      .map(goals => this.deleteGoal(goals));
+    console.log(completedGoals);
+  }
+
+  insertGoal(goal: Goal): void {
+    this.goalService.addGoal(goal)
+    .subscribe(goal => {
+      this.goalService.getGoals();
+    },
+    (error) => console.log(error));
+  }
+
+  updateGoal(goal: Goal): void {
+    this.goalService.updateGoal(goal)
+      .subscribe(goal => this.goalService.getGoals());
+  }
+
+  toggleAccomplished(): void {
+    console.log(`toggleAccomplished called`);
+    this.goalForm.patchValue({didIt: true});
+  }
+
+  submitGoal(goal): void {
+    console.log(`submitGoal() called`);
+    if(this.goalForm.invalid) {
+      console.log(`submitGoal(): this goalForm.invalid = true`);
+      return;
+    }
+    this.showGoalAddEditForm(false);
+    if(goal.id === null || goal.id < 1) {
+      this.insertGoal(goal);
+    }
+    else {
+      this.updateGoal(goal);
+    }
   }
 
 

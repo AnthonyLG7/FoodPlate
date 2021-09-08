@@ -1,6 +1,6 @@
 export class Goal {
     id: number = 0;
-    dealine: string;
+    deadline: string;
     didIt: boolean = false;
     goalTitle: string;
 }
