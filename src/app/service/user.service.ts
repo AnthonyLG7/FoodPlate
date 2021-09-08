@@ -17,6 +17,7 @@ export class UserService {
       this.currentUser = new BehaviorSubject(user);
       return user;
     } else {
+      this.user.reqsStatus.fruitMet = true;
       return this.user;
     }
   }
@@ -24,7 +25,7 @@ export class UserService {
   updateUser(user: User) {
     user.id = 1;
     user.registered = true;
-    user.reqsStatus = {fruitMet: false, vegMet: false, proteinMet: false, grainMet: false};
+    user.reqsStatus = {fruitMet: true, vegMet: false, proteinMet: false, grainMet: false};
     this.currentUser.next(user);
   }
 
