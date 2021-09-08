@@ -1,0 +1,29 @@
+<section *ngIf="errorMessage">
+  {{ errorMessage }}
+</section>
+<section class="initScreen" *ngIf="allGoals?.length > 0">
+  <ul>
+    <li *ngFor="let goal of allGoals">
+      <div>
+        <img
+          src="assets/images/icons/pencil.png"
+          id="editIcon"
+          class="icon buffer"
+        />
+        <img
+          src="assets/images/icons/delete.png"
+          id="deleteIcon"
+          class="icon buffer"
+        />
+        <input class="checkboxLg" type="checkbox" />
+        <label>{{ goal.goalTitle }} </label>
+      </div>
+    </li>
+  </ul>
+  <section class="trashIcon">
+    <img src="assets/images/icons/trash-icon.png" /><span
+      >Delete Completed Goals</span
+    >
+  </section>
+  <button class="fpButton">Add a new Goal</button>
+</section>

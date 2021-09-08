@@ -5,18 +5,19 @@ import { ExercisesComponent } from "./exercises/exercises.component";
 import { FarmersMarketsComponent } from "./farmers-markets/farmers-markets.component";
 import { foodGroupsRoutes } from "./food-groups/food-groups.routing";
 import { FoodComponent } from "./food/food.component";
+import { GoalsComponent } from "./goals/goals.component";
 
 import { PlateComponent } from "./plate/plate.component";
 import { RegisterComponent } from "./register/register.component";
 import { LeaveRegisterGuardService } from "./service/leave-register-guard.service";
 import { RegisterGuardService } from "./service/register-guard.service";
 
-class AllowFullAccessGuard implements CanActivate {
-    canActivate() {
-        console.log("FullAccessGuard has been activated");
-        return true;
-    }
-}
+// class AllowFullAccessGuard implements CanActivate {
+//     canActivate() {
+//         console.log("FullAccessGuard has been activated");
+//         return true;
+//     }
+// }
 
 const fallbackRoute: Route = {
     path: '**', component: DefaultComponent
@@ -32,7 +33,10 @@ const routes: Routes = [
             {path: 'exercises', component: ExercisesComponent},
             {path: 'farmersMarkets', component: FarmersMarketsComponent},
             {path: 'nutritionInfo', component: FoodComponent},
-            ...foodGroupsRoutes,
+            {path: 'goals', component: GoalsComponent},
+            {path: 'foodGroups', 
+                    loadChildren: () => import('./food-groups/food-groups.module')
+                            .then(mod => mod.FoodGroupsModule)},
             fallbackRoute
         ]
     }
@@ -42,7 +46,7 @@ const routes: Routes = [
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
-    providers: [AllowFullAccessGuard, RegisterGuardService, LeaveRegisterGuardService]
+    providers: [RegisterGuardService, LeaveRegisterGuardService]
 })
 
 export class AppRoutingModule {}

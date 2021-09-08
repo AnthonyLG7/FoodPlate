@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { FoodGroupsModule } from './food-groups/food-groups.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeBtnComponent } from './home-btn/home-btn.component';
@@ -19,17 +18,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodaysGoalComponent } from './todays-goal/todays-goal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodComponent } from './food/food.component';
+import { GoalsComponent } from './goals/goals.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent, NavComponent, RegisterComponent, DefaultComponent, ExercisesComponent, FarmersMarketsComponent, TodaysGoalComponent, FoodComponent],
+    AppComponent, HeaderComponent, FooterComponent, MainComponent, HomeBtnComponent, PlateComponent, MessageComponent, NavComponent, RegisterComponent, DefaultComponent, ExercisesComponent, FarmersMarketsComponent, TodaysGoalComponent, FoodComponent, GoalsComponent],
   imports: [
     AppRoutingModule,
     CommonModule,
     BrowserModule,
-    FoodGroupsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
